@@ -32,5 +32,5 @@ print('Average salary by departments:', merged_data.groupby('dname').agg({'salar
 print('-------------------------------------------')
 print('Count of employees without second phone number:', merged_data['phone2'].isna().sum())
 print('-------------------------------------------')
-merged_data.insert('age')
+
 # %%
