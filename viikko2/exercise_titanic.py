@@ -39,7 +39,9 @@ print(dups)
 
 print('')
 # finding the person traveling in class '*', printing just the name (and row index)
-print('There is one person travelling on * class. Person is:', df.query("PClass == '*'").filter(items=['Name']).rename(columns={'Name':''}))
+print('There is one person travelling on * class. Person is:', df.query("PClass == '*'")
+      .filter(items=['Name'])
+      .rename(columns={'Name':''}))
 print(' ')
 
 print(df['Survived'].value_counts()[0], "didn't survive.")
