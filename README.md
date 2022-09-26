@@ -1,3 +1,8 @@
+# What I learned in this course?
+
+I learned Python. (I hadn't used much Python before these exercises.)
+I learned how to group and organize data, how to add/calculate new values to the existing dataframes but also how to filter data not wanted.
+
 # How to run these pieces of code?
 
 To run some of the python code I downloaded Jupyter extension to my Visual Studio Code.
@@ -14,6 +19,7 @@ https://cloud.google.com/products/ai/ml-comic-1
 And sequel of that comic. It's about neural networks!
 https://cloud.google.com/products/ai/ml-comic-2
 
-# How I could improve my data skills?
+# How I could improve my data skills? What was hard?
 
-will get back to this question later :)
+Crosstabs
+Statistical tests (e.g. chi-square, correlation, regression analysis)
