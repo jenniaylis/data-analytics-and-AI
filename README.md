@@ -1,6 +1,7 @@
 # What I learned in this course?
 
 I learned Python. (I hadn't used much Python before these exercises.)
+
 I learned how to group and organize data, how to add/calculate new values to the existing dataframes but also how to filter data not wanted.
 
 # How to run these pieces of code?
@@ -22,4 +23,5 @@ https://cloud.google.com/products/ai/ml-comic-2
 # How I could improve my data skills? What was hard?
 
 Crosstabs
+
 Statistical tests (e.g. chi-square, correlation, regression analysis)

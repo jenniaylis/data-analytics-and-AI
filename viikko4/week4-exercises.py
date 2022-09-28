@@ -21,7 +21,13 @@ print(dg_df)
 dg_df.plot(kind='barh', x='koulutus', y='Lukumäärä', title='Koulutustausta')
 plt.show()
 
+
+
+
+
+
 # %% tehtävä 2
+import pandas as pd
 
 dfs = pd.read_excel("tt.xlsx")
 # create the crosstab
@@ -32,25 +38,35 @@ dg_df['koulutus'] = ['Peruskoulu', '2. aste', 'Korkeakoulu', 'Ylempi korkeakoulu
 
 
 print(dg_df)
+
+
+
+
+
 # %% tehtävä 3
 from scipy.stats import chi2_contingency
 from scipy import stats
 import numpy as np
+import matplotlib.pyplot as plt
 
-dfs = pd.read_excel("tt.xlsx")
+# read data from excel
+df = pd.read_excel("tt.xlsx")
 # create the crosstab
-dg_df = pd.crosstab(index=dfs['koulutus'], columns=dfs['sukup']).reset_index()
+dg_df = pd.crosstab(index=df['koulutus'], columns=df['sukup']).reset_index()
 # re-naming columns and rows
+
 dg_df.columns = ['koulutus', 'mies', 'nainen']
 dg_df['koulutus'] = ['Peruskoulu', '2. aste', 'Korkeakoulu', 'Ylempi korkeakoulu']
 
 #chi square
-obs = np.array(dfs['koulutus'], dtype=np.float32)
-exp = np.array(dfs['sukup'], dtype=np.float32)
-print(obs)
-print(exp)
-chi2_contingency(obs, exp)
-print("chi2: %f\np_value: %f" % stats.chisquare(obs, exp))
+p = stats.chi2_contingency(dg_df[['mies', 'nainen']])[1]
+if (p > 0.05):
+    print(f'Riippuvuus ei ole tilastollisesti merkitsevä, p= {p}')
+
+if (p < 0.05):
+    print('Riippuvuus on tilastollisesti merkitsevä, p= {p}')
+    
+print('Chisquare output: ',chi2_contingency(dg_df[['mies', 'nainen']]))
 # output: chi2, p value, degrees of freedom, array
 
 # creating barplot
@@ -58,7 +74,14 @@ dg_df.plot(kind='barh', x='koulutus', title='Koulutustausta')
 plt.xlabel('Lukumäärä')
 plt.show()
 
+
+
+
+
+
 # %% tehtävä 4
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 dfs = pd.read_excel("tt.xlsx")
 # creating new dataframe with fewer columns
