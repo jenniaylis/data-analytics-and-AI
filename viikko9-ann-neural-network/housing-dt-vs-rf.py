@@ -1,3 +1,4 @@
+# %%
 import pandas as pd
 import numpy as np
 from sklearn.tree import DecisionTreeRegressor
@@ -77,3 +78,5 @@ print (f'\nDecision Tree:\nr2 {r2}')
 print (f'mae {mae}')
 print (f'rmse {rmse}')
 
+
+# %%

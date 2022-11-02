@@ -1,5 +1,7 @@
+# %%
 import pandas as pd
-from tensorflow.keras.models import load_model #load model
+from tensorflow import keras
+from keras.models import load_model
 import pickle #load encoder
 
 # load model
@@ -33,3 +35,5 @@ df_results = Xnew_org.join(ynew)
 
 # tallennetaan ennusteet csv-tiedostoon
 df_results.to_csv('housing-new-ann-with-price.csv', index=False)
+
+# %%

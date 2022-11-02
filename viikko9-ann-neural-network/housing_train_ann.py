@@ -1,3 +1,4 @@
+# %%
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -7,12 +8,12 @@ from sklearn.preprocessing import OneHotEncoder
 from sklearn.compose import ColumnTransformer
 import pickle #save encoder
 from sklearn.preprocessing import StandardScaler
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense,Dropout
+from tensorflow import keras
+from keras.layers import Dense, Dropout
+from keras.models import Sequential, load_model
 
 
 df = pd.read_csv('housing.csv')
-
     # longitude
     # latitude
     # housing_median_age
@@ -72,7 +73,7 @@ print (f'r2: {r2}')
 print (f'mae: {mae}')
 print (f'rmse: {rmse}\n')
 
-# tallentaan malli levylle
+# saving model
 model.save('housing-ann-model.h5')
 
 # save encoder to disk
@@ -85,3 +86,4 @@ with open('housing-ann-scaler_x.pickle', 'wb') as f:
     
 with open('housing-ann-scaler_y.pickle', 'wb') as f:
     pickle.dump(scaler_y, f)
+# %%
